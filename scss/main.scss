@@ -298,6 +298,7 @@ html, body {
             &::before {
               @include position( absolute, 0 null 100% 10px );
               @include transition( 0.5s all );
+              transition-delay: 0.5s;
               border-left: 1px solid $green;
               content: '';
               opacity: 0;
@@ -305,37 +306,6 @@ html, body {
 
             &:last-child {
               padding-bottom: 0;
-            }
-
-            &.active {
-              .status-indicator {
-                background-color: $orange;
-                &:before {
-                  // pulsating ring
-                  @include position( relative, -1px null null -1px );
-                  z-index: 0;
-                  display: block;
-                  @include size( 13px );
-                  border: 1px solid $orange;
-                  border-radius: 40px;
-
-                  opacity: 0;
-                  content: '';
-
-                  animation: pulsate 1.5s ease-out;
-                  animation-iteration-count: infinite;
-                }
-              }
-            }
-            &.complete {
-              &::before {
-                opacity: 1;
-                bottom: 0;
-              }
-
-              .status-indicator {
-                background-color: $green;
-              }
             }
 
             .status-indicator {
@@ -349,7 +319,9 @@ html, body {
               font-size: 16px;
             }
             .status-body {
-              min-height: 150px;
+              @include transition( 0.5s max-height );
+              max-height: 0;
+              overflow: hidden;
 
               ul.item-carousel {
                 display: block;
@@ -502,6 +474,42 @@ html, body {
                     font-weight: bold;
                   }
                 }
+              }
+            }
+
+            &.active {
+              .status-body {
+                min-height: 150px;
+                max-height: 1000px;
+              }
+
+              .status-indicator {
+                background-color: $orange;
+                &:before {
+                  // pulsating ring
+                  @include position( relative, -1px null null -1px );
+                  z-index: 0;
+                  display: block;
+                  @include size( 13px );
+                  border: 1px solid $orange;
+                  border-radius: 40px;
+
+                  opacity: 0;
+                  content: '';
+
+                  animation: pulsate 1.5s ease-out;
+                  animation-iteration-count: infinite;
+                }
+              }
+            }
+            &.complete {
+              &::before {
+                opacity: 1;
+                bottom: 0;
+              }
+
+              .status-indicator {
+                background-color: $green;
               }
             }
           }
