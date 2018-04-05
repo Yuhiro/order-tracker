@@ -25,6 +25,7 @@ html, body {
   font-family: $default-font-family;
 
   @include position (absolute, null 0 0 0 );
+  z-index: 8;
   height: 8em;
 
   transition: height $transition-speed ease-in-out;
