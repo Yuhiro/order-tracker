@@ -4,11 +4,11 @@
 @import 'partials/disregard';
 
 html, body {
-  background: #F7F7F7;
+  //background: #F7F7F7;
 
-  color: $default-font-color;
-  font-size: $default-font-size;
-  font-family: $default-font-family;
+  //color: $default-font-color;
+  //font-size: $default-font-size;
+  //font-family: $default-font-family;
 }
 
 #mobileFrame {
@@ -20,6 +20,10 @@ html, body {
 }
 
 .tracking {
+  color: $default-font-color;
+  font-size: $default-font-size;
+  font-family: $default-font-family;
+
   @include position (absolute, null 0 0 0 );
   height: 8em;
 
