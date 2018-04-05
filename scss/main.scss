@@ -224,6 +224,7 @@ html, body {
 
           .order-progress-bar-indicator {
             @include size ( 40% 100% );
+            @include transition( 0.5s width );
             background: $green;
             border-radius: 1px;
           }
@@ -294,6 +295,14 @@ html, body {
             margin-left: -11px;
             padding: 0 0 1em 30px;
 
+            &::before {
+              @include position( absolute, 0 null 100% 10px );
+              @include transition( 0.5s all );
+              border-left: 1px solid $green;
+              content: '';
+              opacity: 0;
+            }
+
             &:last-child {
               padding-bottom: 0;
             }
@@ -320,9 +329,8 @@ html, body {
             }
             &.complete {
               &::before {
-                @include position( absolute, 0 null 0 10px );
-                border-left: 1px solid $green;
-                content: '';
+                opacity: 1;
+                bottom: 0;
               }
 
               .status-indicator {

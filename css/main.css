@@ -210,6 +210,10 @@ html, body {
         .tracking .tracking-modal .order-details .order-progress-bar .order-progress-bar-container .order-progress-bar-indicator {
           height: 100%;
           width: 40%;
+          -webkit-transition: 0.5s width;
+          -moz-transition: 0.5s width;
+          -o-transition: 0.5s width;
+          transition: 0.5s width;
           background: #7ED321;
           border-radius: 1px; }
     .tracking .tracking-modal .order-details hr {
@@ -262,6 +266,18 @@ html, body {
         position: relative;
         margin-left: -11px;
         padding: 0 0 1em 30px; }
+        .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .status::before {
+          position: absolute;
+          top: 0;
+          bottom: 100%;
+          left: 10px;
+          -webkit-transition: 0.5s all;
+          -moz-transition: 0.5s all;
+          -o-transition: 0.5s all;
+          transition: 0.5s all;
+          border-left: 1px solid #7ED321;
+          content: '';
+          opacity: 0; }
         .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .status:last-child {
           padding-bottom: 0; }
         .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .status.active .status-indicator {
@@ -283,12 +299,8 @@ html, body {
             -webkit-animation-iteration-count: infinite;
             animation-iteration-count: infinite; }
         .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .status.complete::before {
-          position: absolute;
-          top: 0;
-          bottom: 0;
-          left: 10px;
-          border-left: 1px solid #7ED321;
-          content: ''; }
+          opacity: 1;
+          bottom: 0; }
         .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .status.complete .status-indicator {
           background-color: #7ED321; }
         .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .status .status-indicator {
