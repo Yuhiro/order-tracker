@@ -171,7 +171,7 @@ html, body {
       padding: 1em; }
       .tracking .tracking-modal .tracking-modal-container .tracking-modal-elements {
         display: none; }
-    .tracking .tracking-modal .order-details .label {
+    .tracking .tracking-modal .order-details .order-number-label {
       margin-bottom: -0.5em;
       color: #777;
       text-transform: uppercase; }
@@ -190,15 +190,15 @@ html, body {
     .tracking .tracking-modal .order-details .emphasis-number {
       margin-right: 0.1em;
       font-size: 1.4em; }
-    .tracking .tracking-modal .order-details .progress-bar {
+    .tracking .tracking-modal .order-details .order-progress-bar {
       margin: 0.5em 0; }
-      .tracking .tracking-modal .order-details .progress-bar .progress-bar-container {
+      .tracking .tracking-modal .order-details .order-progress-bar .order-progress-bar-container {
         overflow: hidden;
         height: 1em;
         background: #E7E7E7;
         border: 1px solid #E7E7E7;
         border-radius: 2px; }
-        .tracking .tracking-modal .order-details .progress-bar .progress-bar-container .progress-bar-indicator {
+        .tracking .tracking-modal .order-details .order-progress-bar .order-progress-bar-container .order-progress-bar-indicator {
           height: 100%;
           width: 40%;
           background: #7ED321;

@@ -168,7 +168,7 @@ html, body {
 
     // Elements
     .order-details {
-      .label {
+      .order-number-label {
         margin-bottom: -0.5em;
 
         color: $grey;
@@ -200,17 +200,17 @@ html, body {
         font-size: 1.4em;
       }
 
-      .progress-bar {
+      .order-progress-bar {
         margin: 0.5em 0;
 
-        .progress-bar-container {
+        .order-progress-bar-container {
           overflow: hidden;
           height: 1em;
           background: $off-white;
           border: 1px solid $off-white;
           border-radius: 2px;
 
-          .progress-bar-indicator {
+          .order-progress-bar-indicator {
             @include size ( 40% 100% );
             background: $green;
             border-radius: 1px;
