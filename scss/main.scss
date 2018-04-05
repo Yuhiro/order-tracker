@@ -14,7 +14,7 @@ html, body {
 #mobileFrame {
   position: relative;
   overflow: hidden;
-  @include size( 414px 736px );
+  @include size( 414px 836px );
   margin: 2em auto 0;
   background: #EEE;
 }
@@ -319,6 +319,12 @@ html, body {
               }
             }
             &.complete {
+              &::before {
+                @include position( absolute, 0 null 0 10px );
+                border-left: 1px solid $green;
+                content: '';
+              }
+
               .status-indicator {
                 background-color: $green;
               }

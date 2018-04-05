@@ -40,7 +40,7 @@ html, body {
 #mobileFrame {
   position: relative;
   overflow: hidden;
-  height: 736px;
+  height: 836px;
   width: 414px;
   margin: 2em auto 0;
   background: #EEE; }
@@ -282,6 +282,13 @@ html, body {
             animation: pulsate 1.5s ease-out;
             -webkit-animation-iteration-count: infinite;
             animation-iteration-count: infinite; }
+        .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .status.complete::before {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 10px;
+          border-left: 1px solid #7ED321;
+          content: ''; }
         .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .status.complete .status-indicator {
           background-color: #7ED321; }
         .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .status .status-indicator {
