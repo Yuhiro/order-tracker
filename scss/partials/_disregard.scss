@@ -1,0 +1,5 @@
+.da-closer {
+  @include position( absolute, 0 0 0 0 );
+  background: rgba( $black, 0.1 );
+  background: $white url('../imgs/bg.png') center 0/100% no-repeat;
+}

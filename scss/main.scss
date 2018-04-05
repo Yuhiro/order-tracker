@@ -1,0 +1,405 @@
+@import 'helpers/bourbon/bourbon';
+@import 'partials/animations';
+@import 'partials/variables';
+@import 'partials/disregard';
+
+html, body {
+  background: #F7F7F7;
+
+  color: $default-font-color;
+  font-size: $default-font-size;
+  font-family: $default-font-family;
+}
+
+#mobileFrame {
+  position: relative;
+  overflow: hidden;
+  @include size( 414px 736px );
+  margin: 2em auto 0;
+  background: #EEE;
+}
+
+.tracking {
+  @include position (absolute, null 0 0 0 );
+  height: 8em;
+
+  transition: height $transition-speed ease-in-out;
+
+  &.open {
+    height: $modal-height;
+
+    transition: height $transition-speed-slow ease-in-out;
+
+    .tracking-tab {
+      display: none;
+    }
+
+    .tracking-modal {
+      top: 2em;
+      height: 100%;
+      border-radius: 16px 16px 0 0;
+
+      box-shadow: $shadow-rule-focus;
+
+      transition: height $transition-speed ease-in-out, box-shadow $transition-speed ease-in-out;
+
+      .tracking-modal-container {
+        .tracking-modal-loading-text {
+          display: none;
+        }
+        .tracking-modal-elements {
+          display: block;
+        }
+      }
+    }
+  }
+
+  &.loading {
+    .tracking-container {
+      .tracking-notifier {
+        .tracking-button:before {
+          // pulsating ring
+          @include position( relative, 6px null null 6px );
+          z-index: 0;
+          display: block;
+          @include size( 61px );
+          border: 1px solid $orange;
+          border-radius: 40px;
+
+          opacity: 0;
+          content: '';
+
+          animation: pulsate 2s ease-out;
+          animation-iteration-count: infinite;
+        }
+
+        .tracking-tab {
+          width: 0;
+          padding-right: 0;
+
+          opacity: 0;
+
+          transition: width $transition-speed ease-in-out, padding-right $transition-speed ease-in-out, opacity $transition-speed ease-in-out;
+        }
+      }
+
+      .tracking-modal {
+        top: 2em;
+        height: 100%;
+        border-radius: 16px 16px 0 0;
+
+        box-shadow: $shadow-rule;
+
+        transition: top $transition-speed ease-in-out;
+        transition-delay: 500ms;
+      }
+    }
+  }
+
+
+  .tracking-container {
+    position: relative;
+    @include size( 100% );
+
+    .tracking-notifier {
+      .tracking-button {
+        @include position( absolute, 10px 20px null null );
+        z-index: 1;
+        @include size( 75px );
+        background: $orange;
+        background-image: url( '../imgs/tracking-icon.png' );
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 36px auto;
+        border: 4px solid $white;
+        border-radius: 50%;
+
+        color: white;
+        cursor: pointer;
+        box-shadow: $shadow-rule;
+      }
+
+      .tracking-tab {
+        @include position( absolute, 18px 70px null null );
+        z-index: 0;
+        overflow: hidden;
+        width: 133px;
+        padding: 1em 3em 1em 1em;
+        background: $white;
+        border-radius: 16px;
+
+        color: $black;
+        white-space: nowrap;
+        opacity: 1;
+        box-shadow: $shadow-rule;
+
+        .tracking-message {
+          text-align: right;
+
+          .tracking-message-title {
+            font-size: 1.2em;
+          }
+          .tracking-message-subtext {
+            color: $grey;
+            font-size: 0.85em;
+          }
+        }
+      }
+    }
+  }
+
+
+  .tracking-modal {
+    @include position( absolute, 18em 5px 0 5px );
+    z-index: 0;
+    height: 0;
+    background: $white;
+    border-radius: 16px 16px 0 0;
+
+    box-shadow: $shadow-rule;
+
+    .tracking-modal-container {
+      padding: 1em;
+
+      .tracking-modal-elements {
+        display: none;
+      }
+    }
+
+    // Elements
+    .order-details {
+      .label {
+        margin-bottom: -0.5em;
+
+        color: $grey;
+        text-transform: uppercase;
+      }
+
+      .order-number {
+        margin-bottom: 0.1em;
+
+        color: $red;
+        font-size: 2.5em;
+      }
+
+      .subtext {
+        color: $grey;
+      }
+
+      .emphasis-green {
+        color: $green;
+        font-weight: 400;
+      }
+      .emphasis-orange {
+        color: $orange;
+        font-weight: 400;
+      }
+      .emphasis-number {
+        margin-right: 0.1em;
+
+        font-size: 1.4em;
+      }
+
+      .progress-bar {
+        margin: 0.5em 0;
+
+        .progress-bar-container {
+          overflow: hidden;
+          height: 1em;
+          background: $off-white;
+          border: 1px solid $off-white;
+          border-radius: 2px;
+
+          .progress-bar-indicator {
+            @include size ( 40% 100% );
+            background: $green;
+            border-radius: 1px;
+          }
+        }
+      }
+
+      hr {
+        margin: 1.2em 0;
+        border: 1px dashed $off-white;
+      }
+
+      .trasportation-select {
+        cursor: pointer;
+        position: relative;
+        padding: 1em 0 0.25em;
+        font-size: 20px;
+        text-align: center;
+
+        .caret-icon-down {
+          margin-right: 0.7em;
+          width: 10px;
+          @include position( relative, 0 null null null );
+        }
+        .transport-icon-walking, .transport-icon-driving {
+          margin-right: 0.5em;
+          width: 33px;
+        }
+        .transport-icon-driving {
+          @include position( relative, 8px null null null ); 
+        }
+        .transport-icon-walking {
+          @include position( relative, 4px null null null ); 
+        }
+
+        &.driving {
+          & > .walking { display: none; }
+        }
+        &.walking {
+          & > .driving { display: none; }
+        }
+
+        &.open {
+          & > .walking, & > .driving {
+            filter: blur( 1px );
+          }
+          .transport-dropdown {
+            display: block;
+          }
+        }
+
+        .transport-dropdown {
+          display: none;
+          @include position( absolute, -0.5em -0.5em null -0.5em );
+          z-index: 1;
+          padding: 0.5em 0;
+          background: rgba( $white, 0.95 );
+          border: 1px solid $off-white;
+          box-shadow: $shadow-rule;
+          
+          .transport-option {
+            padding: 0.5em 0;
+          }
+        }
+      }
+
+      .status-tracker {
+        .status-tracker-container {
+          margin-left: 0.5em;
+          border-left: 1px solid $off-white;
+
+          .status {
+            position: relative;
+            margin-left: -11px;
+            padding: 0 0 1em 30px;
+
+            &:last-child {
+              padding-bottom: 0;
+            }
+
+            &.active {
+              .status-indicator {
+                background-color: $orange;
+                &:before {
+                  // pulsating ring
+                  @include position( relative, -1px null null -1px );
+                  z-index: 0;
+                  display: block;
+                  @include size( 13px );
+                  border: 1px solid $orange;
+                  border-radius: 40px;
+
+                  opacity: 0;
+                  content: '';
+
+                  animation: pulsate 1.5s ease-out;
+                  animation-iteration-count: infinite;
+                }
+              }
+            }
+            &.complete {
+              .status-indicator {
+                background-color: $green;
+              }
+            }
+
+            .status-indicator {
+              @include position( absolute, 1px 0 0 0 );
+              @include size( 13px );
+              background-color: $off-white;
+              border: 4px solid $white;
+              border-radius: 50%;
+            }
+            .status-title {
+              font-size: 16px;
+            }
+            .status-body {
+              ul.item-carousel {
+                display: block;
+                overflow: hidden;
+                overflow-x: auto;
+                list-style: none;
+                height: 115px;
+                margin: 0 -1em 0 0;
+                padding: 0 1em 0 0;
+
+                white-space: nowrap;
+
+                li.item {
+                  display: inline-block;
+                  max-width: 251px;
+                  background: $white;
+
+                  .item-container {
+                    position: relative;
+                    padding: 1em 1em 1em calc(64px + 0.5em);
+                    border: 1px solid $off-white;
+                    border-radius: 2px;
+
+                    .item-image {
+                      @include position( absolute, 0 0 0 0.25em );
+                      @include size( 64px );
+                      background-image: url( '../imgs/item-img.png' );
+                      background-position: center;
+                    }
+
+                    .item-price {
+                      font-weight: 600;
+
+                      @extend .ellipsis;
+                    }
+                    .item-title {
+                      color: $grey;
+
+                      @extend .ellipsis;
+                    }
+                  }
+
+                  button.item-button {
+                    width: 100%;
+                    margin-top: 0.25em;
+                    padding: 0.5em 0;
+                    background: $red;
+                    border-radius: 2px;
+
+                    text-align: center;
+                    color: $white;
+                    font-size: $default-font-size;
+
+                    &:hover, &:active, &:focus {
+                      background-color: darken( $red, 10 );
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+// Helpers
+.ellipsis {
+  overflow: hidden;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

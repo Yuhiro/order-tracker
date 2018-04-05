@@ -1,0 +1,344 @@
+@-webkit-keyframes pulsate {
+  0% {
+    opacity: 0.0;
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1); }
+  50% {
+    opacity: 1; }
+  100% {
+    opacity: 0.2;
+    -webkit-transform: scale(1.6);
+    transform: scale(1.6); } }
+
+@keyframes pulsate {
+  0% {
+    opacity: 0.0;
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1); }
+  50% {
+    opacity: 1; }
+  100% {
+    opacity: 0.2;
+    -webkit-transform: scale(1.6);
+    transform: scale(1.6); } }
+
+.da-closer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.1);
+  background: #FFF url("../imgs/bg.png") center 0/100% no-repeat; }
+
+html, body {
+  background: #F7F7F7;
+  color: #000;
+  font-size: 14px;
+  font-family: "Open Sans", sans-serif; }
+
+#mobileFrame {
+  position: relative;
+  overflow: hidden;
+  height: 736px;
+  width: 414px;
+  margin: 2em auto 0;
+  background: #EEE; }
+
+.tracking {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 8em;
+  -webkit-transition: height 100ms ease-in-out;
+  -o-transition: height 100ms ease-in-out;
+  transition: height 100ms ease-in-out; }
+  .tracking.open {
+    height: calc(100% - 3em);
+    -webkit-transition: height 200ms ease-in-out;
+    -o-transition: height 200ms ease-in-out;
+    transition: height 200ms ease-in-out; }
+    .tracking.open .tracking-tab {
+      display: none; }
+    .tracking.open .tracking-modal {
+      top: 2em;
+      height: 100%;
+      border-radius: 16px 16px 0 0;
+      -webkit-box-shadow: 0 0 20em rgba(38, 37, 37, 0.9);
+      box-shadow: 0 0 20em rgba(38, 37, 37, 0.9);
+      -webkit-transition: height 100ms ease-in-out, -webkit-box-shadow 100ms ease-in-out;
+      transition: height 100ms ease-in-out, -webkit-box-shadow 100ms ease-in-out;
+      -o-transition: height 100ms ease-in-out, box-shadow 100ms ease-in-out;
+      transition: height 100ms ease-in-out, box-shadow 100ms ease-in-out;
+      transition: height 100ms ease-in-out, box-shadow 100ms ease-in-out, -webkit-box-shadow 100ms ease-in-out; }
+      .tracking.open .tracking-modal .tracking-modal-container .tracking-modal-loading-text {
+        display: none; }
+      .tracking.open .tracking-modal .tracking-modal-container .tracking-modal-elements {
+        display: block; }
+  .tracking.loading .tracking-container .tracking-notifier .tracking-button:before {
+    position: relative;
+    top: 6px;
+    left: 6px;
+    z-index: 0;
+    display: block;
+    height: 61px;
+    width: 61px;
+    border: 1px solid #F5A623;
+    border-radius: 40px;
+    opacity: 0;
+    content: '';
+    -webkit-animation: pulsate 2s ease-out;
+    animation: pulsate 2s ease-out;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite; }
+  .tracking.loading .tracking-container .tracking-notifier .tracking-tab {
+    width: 0;
+    padding-right: 0;
+    opacity: 0;
+    -webkit-transition: width 100ms ease-in-out, padding-right 100ms ease-in-out, opacity 100ms ease-in-out;
+    -o-transition: width 100ms ease-in-out, padding-right 100ms ease-in-out, opacity 100ms ease-in-out;
+    transition: width 100ms ease-in-out, padding-right 100ms ease-in-out, opacity 100ms ease-in-out; }
+  .tracking.loading .tracking-container .tracking-modal {
+    top: 2em;
+    height: 100%;
+    border-radius: 16px 16px 0 0;
+    -webkit-box-shadow: 0 0px 15px rgba(38, 37, 37, 0.3);
+    box-shadow: 0 0px 15px rgba(38, 37, 37, 0.3);
+    -webkit-transition: top 100ms ease-in-out;
+    -o-transition: top 100ms ease-in-out;
+    transition: top 100ms ease-in-out;
+    -webkit-transition-delay: 500ms;
+    -o-transition-delay: 500ms;
+    transition-delay: 500ms; }
+  .tracking .tracking-container {
+    position: relative;
+    height: 100%;
+    width: 100%; }
+    .tracking .tracking-container .tracking-notifier .tracking-button {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      z-index: 1;
+      height: 75px;
+      width: 75px;
+      background: #F5A623;
+      background-image: url("../imgs/tracking-icon.png");
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 36px auto;
+      border: 4px solid #FFF;
+      border-radius: 50%;
+      color: white;
+      cursor: pointer;
+      -webkit-box-shadow: 0 0px 15px rgba(38, 37, 37, 0.3);
+      box-shadow: 0 0px 15px rgba(38, 37, 37, 0.3); }
+    .tracking .tracking-container .tracking-notifier .tracking-tab {
+      position: absolute;
+      top: 18px;
+      right: 70px;
+      z-index: 0;
+      overflow: hidden;
+      width: 133px;
+      padding: 1em 3em 1em 1em;
+      background: #FFF;
+      border-radius: 16px;
+      color: #000;
+      white-space: nowrap;
+      opacity: 1;
+      -webkit-box-shadow: 0 0px 15px rgba(38, 37, 37, 0.3);
+      box-shadow: 0 0px 15px rgba(38, 37, 37, 0.3); }
+      .tracking .tracking-container .tracking-notifier .tracking-tab .tracking-message {
+        text-align: right; }
+        .tracking .tracking-container .tracking-notifier .tracking-tab .tracking-message .tracking-message-title {
+          font-size: 1.2em; }
+        .tracking .tracking-container .tracking-notifier .tracking-tab .tracking-message .tracking-message-subtext {
+          color: #777;
+          font-size: 0.85em; }
+  .tracking .tracking-modal {
+    position: absolute;
+    top: 18em;
+    right: 5px;
+    bottom: 0;
+    left: 5px;
+    z-index: 0;
+    height: 0;
+    background: #FFF;
+    border-radius: 16px 16px 0 0;
+    -webkit-box-shadow: 0 0px 15px rgba(38, 37, 37, 0.3);
+    box-shadow: 0 0px 15px rgba(38, 37, 37, 0.3); }
+    .tracking .tracking-modal .tracking-modal-container {
+      padding: 1em; }
+      .tracking .tracking-modal .tracking-modal-container .tracking-modal-elements {
+        display: none; }
+    .tracking .tracking-modal .order-details .label {
+      margin-bottom: -0.5em;
+      color: #777;
+      text-transform: uppercase; }
+    .tracking .tracking-modal .order-details .order-number {
+      margin-bottom: 0.1em;
+      color: #EC3223;
+      font-size: 2.5em; }
+    .tracking .tracking-modal .order-details .subtext {
+      color: #777; }
+    .tracking .tracking-modal .order-details .emphasis-green {
+      color: #7ED321;
+      font-weight: 400; }
+    .tracking .tracking-modal .order-details .emphasis-orange {
+      color: #F5A623;
+      font-weight: 400; }
+    .tracking .tracking-modal .order-details .emphasis-number {
+      margin-right: 0.1em;
+      font-size: 1.4em; }
+    .tracking .tracking-modal .order-details .progress-bar {
+      margin: 0.5em 0; }
+      .tracking .tracking-modal .order-details .progress-bar .progress-bar-container {
+        overflow: hidden;
+        height: 1em;
+        background: #E7E7E7;
+        border: 1px solid #E7E7E7;
+        border-radius: 2px; }
+        .tracking .tracking-modal .order-details .progress-bar .progress-bar-container .progress-bar-indicator {
+          height: 100%;
+          width: 40%;
+          background: #7ED321;
+          border-radius: 1px; }
+    .tracking .tracking-modal .order-details hr {
+      margin: 1.2em 0;
+      border: 1px dashed #E7E7E7; }
+    .tracking .tracking-modal .order-details .trasportation-select {
+      cursor: pointer;
+      position: relative;
+      padding: 1em 0 0.25em;
+      font-size: 20px;
+      text-align: center; }
+      .tracking .tracking-modal .order-details .trasportation-select .caret-icon-down {
+        margin-right: 0.7em;
+        width: 10px;
+        position: relative;
+        top: 0; }
+      .tracking .tracking-modal .order-details .trasportation-select .transport-icon-walking, .tracking .tracking-modal .order-details .trasportation-select .transport-icon-driving {
+        margin-right: 0.5em;
+        width: 33px; }
+      .tracking .tracking-modal .order-details .trasportation-select .transport-icon-driving {
+        position: relative;
+        top: 8px; }
+      .tracking .tracking-modal .order-details .trasportation-select .transport-icon-walking {
+        position: relative;
+        top: 4px; }
+      .tracking .tracking-modal .order-details .trasportation-select.driving > .walking {
+        display: none; }
+      .tracking .tracking-modal .order-details .trasportation-select.walking > .driving {
+        display: none; }
+      .tracking .tracking-modal .order-details .trasportation-select.open > .walking, .tracking .tracking-modal .order-details .trasportation-select.open > .driving {
+        -webkit-filter: blur(1px);
+        filter: blur(1px); }
+      .tracking .tracking-modal .order-details .trasportation-select.open .transport-dropdown {
+        display: block; }
+      .tracking .tracking-modal .order-details .trasportation-select .transport-dropdown {
+        display: none;
+        position: absolute;
+        top: -0.5em;
+        right: -0.5em;
+        left: -0.5em;
+        z-index: 1;
+        padding: 0.5em 0;
+        background: rgba(255, 255, 255, 0.95);
+        border: 1px solid #E7E7E7;
+        -webkit-box-shadow: 0 0px 15px rgba(38, 37, 37, 0.3);
+        box-shadow: 0 0px 15px rgba(38, 37, 37, 0.3); }
+        .tracking .tracking-modal .order-details .trasportation-select .transport-dropdown .transport-option {
+          padding: 0.5em 0; }
+    .tracking .tracking-modal .order-details .status-tracker .status-tracker-container {
+      margin-left: 0.5em;
+      border-left: 1px solid #E7E7E7; }
+      .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .status {
+        position: relative;
+        margin-left: -11px;
+        padding: 0 0 1em 30px; }
+        .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .status:last-child {
+          padding-bottom: 0; }
+        .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .status.active .status-indicator {
+          background-color: #F5A623; }
+          .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .status.active .status-indicator:before {
+            position: relative;
+            top: -1px;
+            left: -1px;
+            z-index: 0;
+            display: block;
+            height: 13px;
+            width: 13px;
+            border: 1px solid #F5A623;
+            border-radius: 40px;
+            opacity: 0;
+            content: '';
+            -webkit-animation: pulsate 1.5s ease-out;
+            animation: pulsate 1.5s ease-out;
+            -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite; }
+        .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .status.complete .status-indicator {
+          background-color: #7ED321; }
+        .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .status .status-indicator {
+          position: absolute;
+          top: 1px;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          height: 13px;
+          width: 13px;
+          background-color: #E7E7E7;
+          border: 4px solid #FFF;
+          border-radius: 50%; }
+        .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .status .status-title {
+          font-size: 16px; }
+        .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .status .status-body ul.item-carousel {
+          display: block;
+          overflow: hidden;
+          overflow-x: auto;
+          list-style: none;
+          height: 115px;
+          margin: 0 -1em 0 0;
+          padding: 0 1em 0 0;
+          white-space: nowrap; }
+          .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .status .status-body ul.item-carousel li.item {
+            display: inline-block;
+            max-width: 251px;
+            background: #FFF; }
+            .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .status .status-body ul.item-carousel li.item .item-container {
+              position: relative;
+              padding: 1em 1em 1em calc(64px + 0.5em);
+              border: 1px solid #E7E7E7;
+              border-radius: 2px; }
+              .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .status .status-body ul.item-carousel li.item .item-container .item-image {
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0.25em;
+                height: 64px;
+                width: 64px;
+                background-image: url("../imgs/item-img.png");
+                background-position: center; }
+              .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .status .status-body ul.item-carousel li.item .item-container .item-price {
+                font-weight: 600; }
+              .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .status .status-body ul.item-carousel li.item .item-container .item-title {
+                color: #777; }
+            .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .status .status-body ul.item-carousel li.item button.item-button {
+              width: 100%;
+              margin-top: 0.25em;
+              padding: 0.5em 0;
+              background: #EC3223;
+              border-radius: 2px;
+              text-align: center;
+              color: #FFF;
+              font-size: 14px; }
+              .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .status .status-body ul.item-carousel li.item button.item-button:hover, .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .status .status-body ul.item-carousel li.item button.item-button:active, .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .status .status-body ul.item-carousel li.item button.item-button:focus {
+                background-color: #cb1f11; }
+
+.ellipsis, .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .status .status-body ul.item-carousel li.item .item-container .item-price, .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .status .status-body ul.item-carousel li.item .item-container .item-title {
+  overflow: hidden;
+  white-space: nowrap;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis; }
+
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,19 @@
+$orange: #F5A623;
+$white: #FFF;
+$black: #000;
+$shadow: #262525;
+$shadow-rule: 0 0px 15px rgba( $shadow, 0.3 );
+$shadow-rule-focus: 0 0 20em rgba( $shadow, 0.9 );
+$grey: #777;
+$red: #EC3223;
+$green: #7ED321;
+$off-white: #E7E7E7;
+
+$default-font-size: 14px;
+$default-font-color: $black;
+$default-font-family: 'Open Sans', sans-serif;
+
+$transition-speed: 100ms;
+$transition-speed-slow: 200ms;
+
+$modal-height:  calc(100% - 3em);
