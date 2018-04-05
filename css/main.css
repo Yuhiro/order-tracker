@@ -171,7 +171,7 @@ html, body {
       padding: 1em; }
       .tracking .tracking-modal .tracking-modal-container .tracking-modal-elements {
         display: none; }
-    .tracking .tracking-modal .order-details .label {
+    .tracking .tracking-modal .order-details .order-number-label {
       margin-bottom: -0.5em;
       color: #777;
       text-transform: uppercase; }
@@ -190,17 +190,30 @@ html, body {
     .tracking .tracking-modal .order-details .emphasis-number {
       margin-right: 0.1em;
       font-size: 1.4em; }
-    .tracking .tracking-modal .order-details .progress-bar {
+    .tracking .tracking-modal .order-details .order-ready-time {
+      margin: 0.5em 0;
+      padding: 5px;
+      font-size: 16px;
+      background: #E7E7E7; }
+      .tracking .tracking-modal .order-details .order-ready-time .stopwatch {
+        position: relative;
+        top: 2px;
+        width: 18px; }
+    .tracking .tracking-modal .order-details .order-progress-bar {
       margin: 0.5em 0; }
-      .tracking .tracking-modal .order-details .progress-bar .progress-bar-container {
+      .tracking .tracking-modal .order-details .order-progress-bar .order-progress-bar-container {
         overflow: hidden;
         height: 1em;
         background: #E7E7E7;
         border: 1px solid #E7E7E7;
         border-radius: 2px; }
-        .tracking .tracking-modal .order-details .progress-bar .progress-bar-container .progress-bar-indicator {
+        .tracking .tracking-modal .order-details .order-progress-bar .order-progress-bar-container .order-progress-bar-indicator {
           height: 100%;
           width: 40%;
+          -webkit-transition: 0.5s width;
+          -moz-transition: 0.5s width;
+          -o-transition: 0.5s width;
+          transition: 0.5s width;
           background: #7ED321;
           border-radius: 1px; }
     .tracking .tracking-modal .order-details hr {
@@ -218,14 +231,11 @@ html, body {
         position: relative;
         top: 0; }
       .tracking .tracking-modal .order-details .trasportation-select .transport-icon-walking, .tracking .tracking-modal .order-details .trasportation-select .transport-icon-driving {
-        margin-right: 0.5em;
-        width: 33px; }
-      .tracking .tracking-modal .order-details .trasportation-select .transport-icon-driving {
         position: relative;
-        top: 8px; }
-      .tracking .tracking-modal .order-details .trasportation-select .transport-icon-walking {
-        position: relative;
-        top: 4px; }
+        top: 8px;
+        height: 33px;
+        width: 33px;
+        margin-right: 0.5em; }
       .tracking .tracking-modal .order-details .trasportation-select.driving > .walking {
         display: none; }
       .tracking .tracking-modal .order-details .trasportation-select.walking > .driving {
@@ -256,6 +266,18 @@ html, body {
         position: relative;
         margin-left: -11px;
         padding: 0 0 1em 30px; }
+        .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .status::before {
+          position: absolute;
+          top: 0;
+          bottom: 100%;
+          left: 10px;
+          -webkit-transition: 0.5s all;
+          -moz-transition: 0.5s all;
+          -o-transition: 0.5s all;
+          transition: 0.5s all;
+          border-left: 1px solid #7ED321;
+          content: '';
+          opacity: 0; }
         .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .status:last-child {
           padding-bottom: 0; }
         .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .status.active .status-indicator {
@@ -276,6 +298,9 @@ html, body {
             animation: pulsate 1.5s ease-out;
             -webkit-animation-iteration-count: infinite;
             animation-iteration-count: infinite; }
+        .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .status.complete::before {
+          opacity: 1;
+          bottom: 0; }
         .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .status.complete .status-indicator {
           background-color: #7ED321; }
         .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .status .status-indicator {
