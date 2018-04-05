@@ -40,7 +40,7 @@ html, body {
 #mobileFrame {
   position: relative;
   overflow: hidden;
-  height: 836px;
+  height: 736px;
   width: 414px;
   margin: 2em auto 0;
   background: #EEE; }

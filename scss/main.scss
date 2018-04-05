@@ -14,7 +14,7 @@ html, body {
 #mobileFrame {
   position: relative;
   overflow: hidden;
-  @include size( 414px 836px );
+  @include size( 414px 736px );
   margin: 2em auto 0;
   background: #EEE;
 }
