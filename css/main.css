@@ -303,6 +303,8 @@ html, body {
           transition: 0.5s max-height;
           max-height: 0;
           overflow: hidden; }
+          .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .status .status-body p:first-child {
+            margin-top: 0; }
           .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .status .status-body ul.item-carousel {
             display: block;
             overflow: hidden;
@@ -438,7 +440,7 @@ html, body {
             font-size: 14px;
             font-weight: bold; }
         .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .status.active .status-body {
-          min-height: 150px;
+          min-height: 192px;
           max-height: 1000px; }
         .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .status.active .status-indicator {
           background-color: #F5A623; }
