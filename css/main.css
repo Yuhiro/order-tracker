@@ -316,49 +316,142 @@ html, body {
           border-radius: 50%; }
         .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .status .status-title {
           font-size: 16px; }
-        .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .status .status-body ul.item-carousel {
-          display: block;
-          overflow: hidden;
-          overflow-x: auto;
-          list-style: none;
-          height: 115px;
-          margin: 0 -1em 0 0;
-          padding: 0 1em 0 0;
-          white-space: nowrap; }
-          .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .status .status-body ul.item-carousel li.item {
-            display: inline-block;
-            max-width: 251px;
-            background: #FFF; }
-            .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .status .status-body ul.item-carousel li.item .item-container {
+        .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .status .status-body {
+          min-height: 150px; }
+          .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .status .status-body ul.item-carousel {
+            display: block;
+            overflow: hidden;
+            overflow-x: auto;
+            list-style: none;
+            height: 115px;
+            margin: 0 -1em 0 0;
+            padding: 0 1em 0 0;
+            white-space: nowrap; }
+            .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .status .status-body ul.item-carousel li.item {
+              display: inline-block;
+              max-width: 251px;
+              background: #FFF; }
+              .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .status .status-body ul.item-carousel li.item .item-container {
+                position: relative;
+                padding: 1em 1em 1em calc(64px + 0.5em);
+                border: 1px solid #E7E7E7;
+                border-radius: 2px; }
+                .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .status .status-body ul.item-carousel li.item .item-container .item-image {
+                  position: absolute;
+                  top: 0;
+                  right: 0;
+                  bottom: 0;
+                  left: 0.25em;
+                  height: 64px;
+                  width: 64px;
+                  background-image: url("../imgs/item-img.png");
+                  background-position: center; }
+                .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .status .status-body ul.item-carousel li.item .item-container .item-price {
+                  font-weight: 600; }
+                .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .status .status-body ul.item-carousel li.item .item-container .item-title {
+                  color: #777; }
+              .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .status .status-body ul.item-carousel li.item button.item-button {
+                width: 100%;
+                margin-top: 0.25em;
+                padding: 0.5em 0;
+                background: #EC3223;
+                border-radius: 2px;
+                text-align: center;
+                color: #FFF;
+                font-size: 14px; }
+                .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .status .status-body ul.item-carousel li.item button.item-button:hover, .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .status .status-body ul.item-carousel li.item button.item-button:active, .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .status .status-body ul.item-carousel li.item button.item-button:focus {
+                  background-color: #cb1f11; }
+          .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .status .status-body .select-parking-spot {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            margin: -5px;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            -webkit-box-align: stretch;
+            -ms-flex-align: stretch;
+            align-items: stretch; }
+            .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .status .status-body .select-parking-spot label.parking-spot {
               position: relative;
-              padding: 1em 1em 1em calc(64px + 0.5em);
-              border: 1px solid #E7E7E7;
-              border-radius: 2px; }
-              .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .status .status-body ul.item-carousel li.item .item-container .item-image {
+              width: calc( 50% - 10px);
+              margin: 3px; }
+              .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .status .status-body .select-parking-spot label.parking-spot > input[type=radio] {
                 position: absolute;
                 top: 0;
-                right: 0;
                 bottom: 0;
-                left: 0.25em;
-                height: 64px;
-                width: 64px;
-                background-image: url("../imgs/item-img.png");
-                background-position: center; }
-              .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .status .status-body ul.item-carousel li.item .item-container .item-price {
-                font-weight: 600; }
-              .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .status .status-body ul.item-carousel li.item .item-container .item-title {
-                color: #777; }
-            .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .status .status-body ul.item-carousel li.item button.item-button {
-              width: 100%;
-              margin-top: 0.25em;
-              padding: 0.5em 0;
-              background: #EC3223;
-              border-radius: 2px;
-              text-align: center;
-              color: #FFF;
-              font-size: 14px; }
-              .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .status .status-body ul.item-carousel li.item button.item-button:hover, .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .status .status-body ul.item-carousel li.item button.item-button:active, .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .status .status-body ul.item-carousel li.item button.item-button:focus {
-                background-color: #cb1f11; }
+                height: 0px;
+                width: 0px;
+                visibility: hidden; }
+                .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .status .status-body .select-parking-spot label.parking-spot > input[type=radio]:checked + div {
+                  background-image: -webkit-radial-gradient(top, circle, #fac617 0%, #db8c0a 100%);
+                  background-image: -o-radial-gradient(top, circle, #fac617 0%, #db8c0a 100%);
+                  background-image: radial-gradient(circle at top, #fac617 0%, #db8c0a 100%);
+                  border: 2px solid #db8c0a; }
+              .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .status .status-body .select-parking-spot label.parking-spot > div {
+                height: 121px;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                flex-direction: column;
+                -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                justify-content: center;
+                color: #FFFFFF;
+                background-image: -webkit-radial-gradient(top, circle, #FBD249 0%, #F5A623 100%);
+                background-image: -o-radial-gradient(top, circle, #FBD249 0%, #F5A623 100%);
+                background-image: radial-gradient(circle at top, #FBD249 0%, #F5A623 100%);
+                border: 2px solid #F5A623;
+                border-radius: 1px;
+                text-align: center;
+                font-size: 50px;
+                line-height: 50px;
+                font-weight: bold; }
+                .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .status .status-body .select-parking-spot label.parking-spot > div small {
+                  display: block;
+                  font-size: 14px;
+                  line-height: 1em; }
+              .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .status .status-body .select-parking-spot label.parking-spot:hover, .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .status .status-body .select-parking-spot label.parking-spot:active, .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .status .status-body .select-parking-spot label.parking-spot:focus {
+                cursor: pointer; }
+                .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .status .status-body .select-parking-spot label.parking-spot:hover > div, .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .status .status-body .select-parking-spot label.parking-spot:active > div, .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .status .status-body .select-parking-spot label.parking-spot:focus > div {
+                  background-image: -webkit-radial-gradient(top, circle, #fac617 0%, #db8c0a 100%);
+                  background-image: -o-radial-gradient(top, circle, #fac617 0%, #db8c0a 100%);
+                  background-image: radial-gradient(circle at top, #fac617 0%, #db8c0a 100%);
+                  border: 2px solid #db8c0a; }
+        .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .status.status-ready.driving .driving-instructions {
+          display: block; }
+        .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .status.status-ready.driving .walking-instructions {
+          display: none; }
+        .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .status.status-ready.walking .driving-instructions {
+          display: none; }
+        .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .status.status-ready.walking .walking-instructions {
+          display: block; }
+        .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .status.status-ready.walking .barcode-container {
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+          flex-direction: column;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
+          justify-content: center;
+          padding: 10px;
+          text-align: center;
+          border: 2px dashed #EEEEEE; }
+          .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .status.status-ready.walking .barcode-container img {
+            height: 60px;
+            max-width: 70%; }
+          .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .status.status-ready.walking .barcode-container .barcode-value {
+            margin-top: -5px;
+            font-size: 14px;
+            font-weight: bold; }
 
 .ellipsis, .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .status .status-body ul.item-carousel li.item .item-container .item-price, .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .status .status-body ul.item-carousel li.item .item-container .item-title {
   overflow: hidden;

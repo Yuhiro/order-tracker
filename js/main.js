@@ -20,15 +20,16 @@ $('.da-closer').click(function(){
 
 $('.trasportation-select').click( function() {
   $(this).addClass('open');
-  console.log('hi');
 });
 
 $('.transport-option.walking').click( function(e) {
   $('.trasportation-select').addClass('walking').removeClass('driving open');
+  $('.status-ready').addClass('walking').removeClass('driving');
   e.stopPropagation();
 });
 
 $('.transport-option.driving').click( function(e) {
   $('.trasportation-select').addClass('driving').removeClass('walking open');
+  $('.status-ready').addClass('driving').removeClass('walking');
   e.stopPropagation();
 });
