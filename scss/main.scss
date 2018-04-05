@@ -234,9 +234,12 @@ html, body {
         }
       }
 
-      hr {
+      hr.hor-ruley {
         margin: 1.2em 0;
         border: 1px dashed $off-white;
+        border-width: 0 0 1px 0;
+        background: none;
+        height: 0;
       }
 
       .trasportation-select {

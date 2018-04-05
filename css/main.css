@@ -212,9 +212,12 @@
           transition: 0.5s width;
           background: #7ED321;
           border-radius: 1px; }
-    .tracking .tracking-modal .order-details hr {
+    .tracking .tracking-modal .order-details hr.hor-ruley {
       margin: 1.2em 0;
-      border: 1px dashed #E7E7E7; }
+      border: 1px dashed #E7E7E7;
+      border-width: 0 0 1px 0;
+      background: none;
+      height: 0; }
     .tracking .tracking-modal .order-details .trasportation-select {
       cursor: pointer;
       position: relative;
