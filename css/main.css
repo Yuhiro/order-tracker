@@ -219,33 +219,33 @@
       border-width: 0 0 1px 0;
       background: none;
       height: 0; }
-    .tracking .tracking-modal .order-details .trasportation-select {
+    .tracking .tracking-modal .order-details .transportation-select {
       cursor: pointer;
       position: relative;
       padding: 1em 0 0.25em;
       font-size: 20px;
       text-align: center; }
-      .tracking .tracking-modal .order-details .trasportation-select .caret-icon-down {
+      .tracking .tracking-modal .order-details .transportation-select .caret-icon-down {
         margin-right: 0.7em;
         width: 10px;
         position: relative;
         top: 0; }
-      .tracking .tracking-modal .order-details .trasportation-select .transport-icon-walking, .tracking .tracking-modal .order-details .trasportation-select .transport-icon-driving {
+      .tracking .tracking-modal .order-details .transportation-select .transport-icon-walking, .tracking .tracking-modal .order-details .transportation-select .transport-icon-driving {
         position: relative;
         top: 8px;
         height: 33px;
         width: 33px;
         margin-right: 0.5em; }
-      .tracking .tracking-modal .order-details .trasportation-select.driving > .walking {
+      .tracking .tracking-modal .order-details .transportation-select.driving > .walking {
         display: none; }
-      .tracking .tracking-modal .order-details .trasportation-select.walking > .driving {
+      .tracking .tracking-modal .order-details .transportation-select.walking > .driving {
         display: none; }
-      .tracking .tracking-modal .order-details .trasportation-select.open > .walking, .tracking .tracking-modal .order-details .trasportation-select.open > .driving {
+      .tracking .tracking-modal .order-details .transportation-select.open > .walking, .tracking .tracking-modal .order-details .transportation-select.open > .driving {
         -webkit-filter: blur(1px);
         filter: blur(1px); }
-      .tracking .tracking-modal .order-details .trasportation-select.open .transport-dropdown {
+      .tracking .tracking-modal .order-details .transportation-select.open .transport-dropdown {
         display: block; }
-      .tracking .tracking-modal .order-details .trasportation-select .transport-dropdown {
+      .tracking .tracking-modal .order-details .transportation-select .transport-dropdown {
         display: none;
         position: absolute;
         top: -0.5em;
@@ -257,7 +257,7 @@
         border: 1px solid #E7E7E7;
         -webkit-box-shadow: 0 0px 15px rgba(38, 37, 37, 0.3);
         box-shadow: 0 0px 15px rgba(38, 37, 37, 0.3); }
-        .tracking .tracking-modal .order-details .trasportation-select .transport-dropdown .transport-option {
+        .tracking .tracking-modal .order-details .transportation-select .transport-dropdown .transport-option {
           padding: 0.5em 0; }
     .tracking .tracking-modal .order-details .status-tracker .status-tracker-container {
       margin-left: 0.5em;
