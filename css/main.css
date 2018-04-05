@@ -227,14 +227,11 @@ html, body {
         position: relative;
         top: 0; }
       .tracking .tracking-modal .order-details .trasportation-select .transport-icon-walking, .tracking .tracking-modal .order-details .trasportation-select .transport-icon-driving {
-        margin-right: 0.5em;
-        width: 33px; }
-      .tracking .tracking-modal .order-details .trasportation-select .transport-icon-driving {
         position: relative;
-        top: 8px; }
-      .tracking .tracking-modal .order-details .trasportation-select .transport-icon-walking {
-        position: relative;
-        top: 4px; }
+        top: 8px;
+        height: 33px;
+        width: 33px;
+        margin-right: 0.5em; }
       .tracking .tracking-modal .order-details .trasportation-select.driving > .walking {
         display: none; }
       .tracking .tracking-modal .order-details .trasportation-select.walking > .driving {

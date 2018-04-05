@@ -248,14 +248,9 @@ html, body {
           @include position( relative, 0 null null null );
         }
         .transport-icon-walking, .transport-icon-driving {
-          margin-right: 0.5em;
-          width: 33px;
-        }
-        .transport-icon-driving {
           @include position( relative, 8px null null null ); 
-        }
-        .transport-icon-walking {
-          @include position( relative, 4px null null null ); 
+          @include size( 33px );
+          margin-right: 0.5em;
         }
 
         &.driving {
