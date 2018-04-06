@@ -34,7 +34,7 @@
 #mobileFrame {
   position: relative;
   overflow: hidden;
-  height: 736px;
+  height: 1736px;
   width: 414px;
   margin: 2em auto 0;
   background: #EEE; }
@@ -305,6 +305,34 @@
           overflow: hidden; }
           .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .order-status .status-body p:first-child {
             margin-top: 0; }
+          .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .order-status .status-body .order-status-well {
+            background: #7ED321;
+            padding: 1em;
+            color: #FFF;
+            border-radius: 1px;
+            margin-bottom: 2em; }
+          .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .order-status .status-body .order-status-phone {
+            position: relative;
+            padding-left: 55px; }
+            .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .order-status .status-body .order-status-phone .phone-button {
+              position: absolute;
+              top: -5px;
+              left: 0;
+              height: 38px;
+              width: 38px;
+              border: 3px solid #FFF;
+              -webkit-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+              box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+              border-radius: 50%;
+              background-image: -webkit-radial-gradient(top, circle, #FBD249 0%, #F5A623 100%);
+              background-image: -o-radial-gradient(top, circle, #FBD249 0%, #F5A623 100%);
+              background-image: radial-gradient(circle at top, #FBD249 0%, #F5A623 100%);
+              text-align: center; }
+              .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .order-status .status-body .order-status-phone .phone-button:hover {
+                background: #F5A623; }
+              .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .order-status .status-body .order-status-phone .phone-button .phone-image {
+                width: 20px;
+                margin-top: 8px; }
           .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .order-status .status-body ul.item-carousel {
             display: block;
             overflow: hidden;
@@ -407,8 +435,14 @@
                   background-image: -o-radial-gradient(top, circle, #fac617 0%, #db8c0a 100%);
                   background-image: radial-gradient(circle at top, #fac617 0%, #db8c0a 100%);
                   border: 2px solid #db8c0a; }
+        .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .order-status.status-ready.driving.confirmed .driving-instructions {
+          display: none; }
+        .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .order-status.status-ready.driving.confirmed .driving-confirmed {
+          display: block; }
         .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .order-status.status-ready.driving .driving-instructions {
           display: block; }
+        .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .order-status.status-ready.driving .driving-confirmed {
+          display: none; }
         .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .order-status.status-ready.driving .walking-instructions {
           display: none; }
         .tracking .tracking-modal .order-details .status-tracker .status-tracker-container .order-status.status-ready.walking .driving-instructions {

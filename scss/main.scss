@@ -14,7 +14,7 @@ html, body {
 #mobileFrame {
   position: relative;
   overflow: hidden;
-  @include size( 414px 736px );
+  @include size( 414px 1736px ); // 736
   margin: 2em auto 0;
   background: #EEE;
 }
@@ -334,6 +334,37 @@ html, body {
                 margin-top: 0;
               }
 
+              .order-status-well {
+                background: $green;
+                padding: 1em;
+                color: $white;
+                border-radius: 1px;
+                margin-bottom: 2em;
+              }
+              .order-status-phone {
+                position: relative; 
+                padding-left: 55px; 
+
+                .phone-button {
+                  @include position( absolute, -5px null null 0 );
+                  @include size( 38px );
+                  border: 3px solid $white;
+                  box-shadow: 0 2px 3px rgba( $black, 0.1 );
+                  border-radius: 50%;
+                  background-image: radial-gradient( circle at top, #FBD249 0%, #F5A623 100%);
+                  text-align: center;
+
+                  &:hover {
+                    background: $orange;
+                  }
+
+                  .phone-image {
+                    width: 20px;
+                    margin-top: 8px;
+                  }
+                }
+              }
+
               ul.item-carousel {
                 display: block;
                 overflow: hidden;
@@ -450,8 +481,19 @@ html, body {
 
             &.status-ready {
               &.driving {
+                &.confirmed {
+                  .driving-instructions {
+                    display: none;
+                  }
+                  .driving-confirmed {
+                    display: block;
+                  }
+                }
                 .driving-instructions {
                   display: block;
+                }
+                .driving-confirmed {
+                  display: none;
                 }
                 .walking-instructions {
                   display: none;
