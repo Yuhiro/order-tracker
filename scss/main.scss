@@ -370,7 +370,7 @@ html, body {
                 overflow: hidden;
                 overflow-x: auto;
                 list-style: none;
-                height: 115px;
+                height: 120px;
                 margin: 0 -1em 0 0;
                 padding: 0 1em 0 0;
 
@@ -380,6 +380,24 @@ html, body {
                   display: inline-block;
                   max-width: 251px;
                   background: $white;
+
+                  &.added {
+                    position: relative;
+
+                    &:after {
+                      content: 'Added';
+                      background: rgba( $red, 0.8 ); 
+                      @include position( absolute, 0 0 0 0 );
+                      
+                      color: $white;
+                      text-align: center;
+                      line-height: 4;
+                      font-size: 1.8em;
+                      text-shadow: 0 2px 3px rgba( $black, 0.1 );
+                      border: 2px solid $red;
+                      border-radius: 2px;
+                    }
+                  }
 
                   .item-container {
                     position: relative;
